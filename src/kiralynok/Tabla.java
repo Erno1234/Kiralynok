@@ -41,7 +41,7 @@ public class Tabla {
 
     public boolean uresOszlop(int oszlop) {
         int i = 0;
-        while(i < 8 && !(T[oszlop][i] == 'K')){
+        while (i < 8 && !(T[oszlop][i] == 'K')) {
             i++;
         }
         return i >= 8;
@@ -49,17 +49,29 @@ public class Tabla {
 
     public boolean uresSor(int sor) {
         int i = 0;
-        while(i < 8 && !(T[sor][i] == 'K')){
+        while (i < 8 && !(T[sor][i] == 'K')) {
             i++;
         }
         return i >= 8;
     }
 
     public int uresSorokSzama() {
-        return 0;
+        int uresSorDb = 0;
+        for (int i = 0; i < 8; i++) {
+            if (uresSor(i)) {
+                uresSorDb++;
+            }
+        }
+        return uresSorDb;
     }
 
     public int uresOszlopokSzama() {
-        return 0;
+        int uresOszlopDb = 0;
+        for (int i = 0; i < 8; i++) {
+            if (uresOszlop(i)) {
+                uresOszlopDb++;
+            }
+        }
+        return uresOszlopDb;
     }
 }
