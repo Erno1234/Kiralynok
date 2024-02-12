@@ -1,5 +1,8 @@
-package kiralynok;
+package model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class Tabla {
@@ -73,5 +76,19 @@ public class Tabla {
             }
         }
         return uresOszlopDb;
+    }
+    
+     public void fajlbaIr(String fajlNev) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fajlNev))) {
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    writer.write(T[i][j]);
+                }
+                writer.newLine();
+            }
+            System.out.println("Sikeres fájlbírás " + fajlNev);
+        } catch (IOException e) {
+            System.err.println("Sikeretelen fájlbírás " + e.getMessage());
+        }
     }
 }
