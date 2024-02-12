@@ -39,12 +39,20 @@ public class Tabla {
         }
     }
 
-    public boolean uresSor(int sor) {
-        return false;
+    public boolean uresOszlop(int oszlop) {
+        int i = 0;
+        while(i < 8 && !(T[oszlop][i] == 'K')){
+            i++;
+        }
+        return i >= 8;
     }
 
-    public boolean uresOszlop(int oszlop) {
-        return false;
+    public boolean uresSor(int sor) {
+        int i = 0;
+        while(i < 8 && !(T[sor][i] == 'K')){
+            i++;
+        }
+        return i >= 8;
     }
 
     public int uresSorokSzama() {
