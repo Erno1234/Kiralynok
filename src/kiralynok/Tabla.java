@@ -16,6 +16,12 @@ public class Tabla {
     }
 
     public void megjelenit() {
+        for (char[] tomb : T) {
+            for (char c : tomb) {
+                System.out.print(c + "");
+            }
+            System.out.println("");
+        }
     }
 
     public void elhelyez(int n) {
