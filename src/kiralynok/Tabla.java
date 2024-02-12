@@ -31,9 +31,9 @@ public class Tabla {
         int db = 0;
         while (db < n) {
             int sor = rnd.nextInt(8);
-            int oszl = rnd.nextInt(8);
-            if (T[sor][oszl] != 'K') {
-                T[sor][oszl] = 'K';
+            int oszlop = rnd.nextInt(8);
+            if (T[sor][oszlop] != 'K') {
+                T[sor][oszlop] = 'K';
                 db++;
             }
         }
