@@ -77,9 +77,9 @@ public class Tabla {
         }
         return uresOszlopDb;
     }
-    
-     public void fajlbaIr(String fajlNev) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fajlNev))) {
+
+    public void fajlbaIr(String fajlNev) {
+        try ( BufferedWriter writer = new BufferedWriter(new FileWriter(fajlNev))) {
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 8; j++) {
                     writer.write(T[i][j]);
@@ -90,5 +90,16 @@ public class Tabla {
         } catch (IOException e) {
             System.err.println("Sikeretelen fájlbírás " + e.getMessage());
         }
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                sb.append(T[i][j]);
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
