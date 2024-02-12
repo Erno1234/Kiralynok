@@ -1,9 +1,12 @@
 package kiralynok;
 
+import java.util.Random;
+
 public class Tabla {
 
     private char[][] T;
     private char uresCella;
+    private static Random rnd = new Random();
 
     public Tabla(char uresCella) {
         T = new char[8][8];
@@ -25,6 +28,15 @@ public class Tabla {
     }
 
     public void elhelyez(int n) {
+        int db = 0;
+        while (db < n) {
+            int sor = rnd.nextInt(8);
+            int oszl = rnd.nextInt(8);
+            if (T[sor][oszl] != 'K') {
+                T[sor][oszl] = 'K';
+                db++;
+            }
+        }
     }
 
     public boolean uresSor(int sor) {
